@@ -1,0 +1,190 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+  font-family: "Great Vibes", cursive;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem 4rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heart Rain Effect */
+.heart-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  color: #ff2d52;
+  animation: fall linear infinite;
+  font-size: 1.5rem;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Music Prompt */
+.music-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.music-prompt-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.music-prompt-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.music-prompt-button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.music-prompt-button:hover {
+  transform: scale(1.05);
+}
+
+.dancing-couple-gif {
+  width: 300px;
+  height: auto;
+  margin: 20px auto;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.dancing-couple-gif.visible {
+  opacity: 1;
+}
+
+.dancing-couple-gif img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.celebration-icons {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: #d32f2f;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.celebration-icons.visible {
+  opacity: 1;
+}
+
+.celebration-icons i {
+  margin: 0 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.music-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.music-controls button {
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #d32f2f;
+  border-radius: 25px;
+  color: #d32f2f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-family: "Arial Rounded MT Bold", sans-serif;
+}
+
+.music-controls button:hover {
+  background: #d32f2f;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
